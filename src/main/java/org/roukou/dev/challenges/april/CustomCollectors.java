@@ -1,4 +1,4 @@
-package org.roukou.dev.challenges.april.week_3;
+package org.roukou.dev.challenges.april;
 
 import java.util.EnumSet;
 import java.util.function.BiFunction;
