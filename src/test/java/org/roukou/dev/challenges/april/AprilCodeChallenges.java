@@ -93,7 +93,7 @@ public class AprilCodeChallenges {
      * Set<String>>.
      */
     @Test
-    public void h2_invertMultiMap() {
+    public void challege_three_invert_multimap() {
       Map<String, Set<Integer>> input = new HashMap<>();
       input.put("a", new HashSet<>(Arrays.asList(1, 2)));
       input.put("b", new HashSet<>(Arrays.asList(2, 3)));
