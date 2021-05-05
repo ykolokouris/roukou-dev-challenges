@@ -60,8 +60,7 @@ public class AprilCodeChallenges {
     public void challenge_one_character_shorting() {
       String input = "aaaaabbccccdeeeeeeaaafff";
 
-      // TODO: Add your code here
-      List<String> result = null;
+      List<String> result = input.chars().mapToObj(c -> String.valueOf((char)c)).collect(SplitConsecutiveCharsCollector.getCollector());
 
       assertEquals("[aaaaa, bb, cccc, d, eeeeee, aaa, fff]", result.toString());
     }
@@ -76,8 +75,7 @@ public class AprilCodeChallenges {
           Stream.of("alfa", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel")
               .parallel();
 
-      // TODO: Add your code here
-      List<String> result = null;
+      List<String> result = input.collect(LongestWordsCollector.getCollector());
 
       assertEquals(Arrays.asList("charlie", "foxtrot"), result);
     }
@@ -102,8 +100,7 @@ public class AprilCodeChallenges {
       input.put("e", new HashSet<>(Arrays.asList(2, 4)));
       input.put("f", new HashSet<>(Arrays.asList(3, 4)));
 
-      // TODO: Adding your code here
-      Map<Integer, Set<String>> result = null;
+      Map<Integer, Set<String>> result = input.entrySet().stream().collect((new InvertMapCollector<String, Integer>()));
 
       assertEquals(new HashSet<>(Arrays.asList("a", "c", "d")), result.get(1));
       assertEquals(new HashSet<>(Arrays.asList("a", "b", "e")), result.get(2));
@@ -123,8 +120,7 @@ public class AprilCodeChallenges {
 
       List<Class<?>> origin = List.of(ArrayList.class, HashSet.class, LinkedHashSet.class);
 
-      // TODO: Provide your solution here
-      Map<Class<?>, Map<Boolean, Set<Class<?>>>> result = null;
+      Map<Class<?>, Map<Boolean, Set<Class<?>>>> result = origin.stream().collect(ClassesAndInterfacesMapCollector.getCollector());
 
       assertEquals(
           Map.of(
